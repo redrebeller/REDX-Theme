@@ -1,113 +1,348 @@
-/* ================================
-   REDX OP PREMIUM ENHANCEMENTS
-   By REDREBELLER
-================================ */
+/* ======================================
+   REDX APPLE GLASS UI EFFECT
+   Glassmorphism + Smooth Animation
+====================================== */
 
 
-/* Background Premium Overlay */
-#app-mount::before {
-    content: "";
-    position: fixed;
-    inset: 0;
+/* Global Apple Glass Layer */
+#app-mount {
+
     background:
     linear-gradient(
-        120deg,
-        rgba(255,0,0,0.18),
-        rgba(0,0,0,0.75)
+        135deg,
+        rgba(255,0,0,.15),
+        rgba(0,0,0,.85)
     );
-    pointer-events:none;
-    z-index:-1;
+
 }
 
 
-/* Global Glass Effect */
+/* Glass Panels */
 #app-mount .container__9293f,
 #app-mount .sidebar__5e434,
-#app-mount .chat_f75fb0,
 #app-mount .members_c8ffbb,
+#app-mount .chat_f75fb0,
 #app-mount .panels__5e434,
-#app-mount .container__2637a {
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    background-color:
-    rgba(10,10,10,0.45)!important;
-
-    border-right:1px solid rgba(255,0,0,.25);
-}
+#app-mount .container__2637a,
+#app-mount .container_f37cb1,
+#app-mount .title_f75fb0 {
 
 
+    background:
+    rgba(255,255,255,.06)!important;
 
-/* Neon Red Glow */
-#app-mount .selected_c69b6d,
-#app-mount .wrapper__2ea32:hover,
-#app-mount .channel__972a0:hover {
+
+    backdrop-filter:
+    blur(25px)
+    saturate(180%);
+
+
+    -webkit-backdrop-filter:
+    blur(25px)
+    saturate(180%);
+
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
 
     box-shadow:
-    0 0 15px rgba(255,0,0,.6);
+
+    inset 0 0 40px
+    rgba(255,255,255,.04),
+
+    0 10px 40px
+    rgba(0,0,0,.5);
+
 
 }
 
 
 
-/* Better Server Icons */
+/* Apple Floating Animation */
 
-#app-mount .blobContainer_e5445c img {
-
-    transition:
-    transform .3s ease,
-    filter .3s ease;
-
-}
+#app-mount .container__9293f,
+#app-mount .sidebar__5e434,
+#app-mount .members_c8ffbb {
 
 
-#app-mount .blobContainer_e5445c:hover img {
-
-    transform:scale(1.12);
-
-    filter:
-    drop-shadow(0 0 12px red);
+    animation:
+    appleFloat 8s ease-in-out infinite;
 
 }
 
 
+@keyframes appleFloat {
 
-/* Message Cards */
+
+    0% {
+
+        transform:
+        translateY(0px);
+
+    }
+
+
+    50% {
+
+        transform:
+        translateY(-4px);
+
+    }
+
+
+    100% {
+
+        transform:
+        translateY(0px);
+
+    }
+
+}
+
+
+
+/* Glass Shine Effect */
+
+#app-mount .container__9293f::before,
+#app-mount .sidebar__5e434::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent 20%,
+
+    rgba(255,255,255,.15),
+
+    transparent 60%
+
+    );
+
+
+    opacity:0;
+
+
+    transition:.5s;
+
+
+    pointer-events:none;
+
+}
+
+
+
+#app-mount .container__9293f:hover::before,
+#app-mount .sidebar__5e434:hover::before {
+
+
+    opacity:1;
+
+
+}
+
+
+
+/* Message Apple Cards */
+
 
 #app-mount .message__5126c {
 
-    margin:8px;
-    border-radius:15px;
 
-    transition:.25s;
+    background:
+
+    rgba(255,255,255,.05)!important;
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+    border-radius:
+
+    18px;
+
+
+    margin:
+
+    6px;
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.1);
+
+
+    transition:
+
+    .35s;
 
 }
+
 
 
 #app-mount .message__5126c:hover {
 
+
     transform:
-    translateX(8px);
+
+    translateX(10px)
+
+    scale(1.01);
+
 
     background:
+
     rgba(255,0,0,.12)!important;
+
+
+    box-shadow:
+
+    0 0 30px
+
+    rgba(255,0,0,.35);
 
 }
 
 
 
-/* Chat Input Premium */
+/* Apple Style Buttons */
+
+
+#app-mount button {
+
+
+    border-radius:
+
+    14px!important;
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    background:
+
+    rgba(255,255,255,.08)!important;
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.15);
+
+
+    transition:
+
+    .3s!important;
+
+}
+
+
+
+#app-mount button:hover {
+
+
+    transform:
+
+    translateY(-3px);
+
+
+    background:
+
+    rgba(255,0,0,.25)!important;
+
+
+    box-shadow:
+
+    0 0 25px
+
+    red;
+
+
+}
+
+
+
+/* Server Icon Glass */
+
+#app-mount .wrapper__6e9f8 {
+
+
+    transition:
+
+    .4s;
+
+
+}
+
+
+
+#app-mount .wrapper__6e9f8:hover {
+
+
+    transform:
+
+    scale(1.15)
+
+    rotate(5deg);
+
+
+    filter:
+
+    drop-shadow(
+    0 0 20px red
+    );
+
+
+}
+
+
+
+/* Input Bar */
 
 #app-mount .channelTextArea_f75fb0 {
 
-    border-radius:18px!important;
+
+    border-radius:
+
+    22px!important;
+
 
     background:
-    rgba(0,0,0,.55)!important;
+
+    rgba(255,255,255,.08)!important;
+
+
+    backdrop-filter:
+
+    blur(25px);
+
 
     border:
-    1px solid rgba(255,0,0,.3);
+
+    1px solid
+
+    rgba(255,255,255,.2);
+
 
 }
 
@@ -115,137 +350,66 @@
 
 #app-mount .channelTextArea_f75fb0:focus-within {
 
-    border-color:red;
 
     box-shadow:
-    0 0 20px red;
+
+
+    0 0 35px
+
+    rgba(255,0,0,.7);
+
 
 }
 
 
 
-/* User List */
+/* Apple Style Scrollbar */
 
-#app-mount .member__5d473 {
-
-    backdrop-filter:blur(10px);
-
-    transition:.3s;
-
-}
+::-webkit-scrollbar {
 
 
-#app-mount .member__5d473:hover {
+    width:
 
-    transform:
-    translateX(12px);
-
-    box-shadow:
-    0 0 15px rgba(255,0,0,.4);
+    7px;
 
 }
 
 
 
-/* Discord Buttons */
+::-webkit-scrollbar-thumb {
 
-#app-mount button {
-
-    transition:.25s!important;
-
-}
-
-
-#app-mount button:hover {
-
-    transform:
-    translateY(-2px);
-
-    box-shadow:
-    0 0 15px rgba(255,0,0,.6);
-
-}
-
-
-
-/* Scrollbar */
-
-#app-mount ::-webkit-scrollbar {
-
-    width:8px;
-
-}
-
-
-#app-mount ::-webkit-scrollbar-thumb {
 
     background:
+
     linear-gradient(
+
     red,
-    darkred
+
+    #800000
+
     );
 
-    border-radius:20px;
+
+    border-radius:
+
+    20px;
+
 
 }
 
 
 
-/* Profile Popup */
+/* REDX Glow */
 
-#app-mount .outer_c0bea0 {
+#app-mount .selected_c69b6d {
 
-    border-radius:20px!important;
-
-    backdrop-filter:
-    blur(20px);
 
     box-shadow:
-    0 0 40px rgba(255,0,0,.35);
-
-}
 
 
+    0 0 20px red,
 
-/* Nitro Cards */
+    inset 0 0 20px rgba(255,0,0,.3);
 
-#app-mount .card_b5493b:hover {
-
-    transform:
-    translateY(-8px);
-
-    box-shadow:
-    0 0 25px red;
-
-    transition:.3s;
-
-}
-
-
-
-/* Smooth Everything */
-
-* {
-
-    transition:
-    background-color .2s ease,
-    border-color .2s ease;
-
-}
-
-
-
-/* REDX Logo Style */
-#app-mount .childWrapper__6e9f8 {
-
-    background:
-    linear-gradient(
-    135deg,
-    red,
-    black
-    )!important;
-
-    box-shadow:
-    0 0 25px red;
 
 }
