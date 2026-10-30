@@ -1,14 +1,21 @@
 {
-  "version": "1.0",
-  "updated_at": "2026-10-30T02:30:00Z",
-  "master": "panel.redx.fun",
-  "licenses": {
-    "lilly.zflow.fun": {
-      "status": "active",
-      "customer": "Lilly Core Team",
-      "tier": "enterprise",
-      "expires_at": "2028-12-31",
-      "note": "Production India Node"
+    "version": "1.0",
+    "updated_at": "2026-10-30T02:30:00Z",
+    "master": "panel.redx.fun",
+    "licenses": {
+        "lilly.zflow.fun": {
+            "status": "active",
+            "customer": "Lilly Core Team",
+            "tier": "enterprise",
+            "expires_at": "2028-12-31",
+            "note": "Production India Node"
+        },
+        "panel.lilycore.online": {
+            "status": "active",
+            "customer": "Lilycore Online Team",
+            "tier": "enterprise",
+            "expires_at": "2028-12-31",
+            "note": "Production Lilycore Panel"
+        }
     }
-  }
 }
