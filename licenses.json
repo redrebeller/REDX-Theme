@@ -6,7 +6,7 @@
     "lilly.zflow.fun": {
       "status": "active",
       "customer": "Lilly Core Team",
-      "tier": "suspended",
+      "tier": "enterprise",
       "expires_at": "2028-12-31",
       "note": "Production India Node"
     }
